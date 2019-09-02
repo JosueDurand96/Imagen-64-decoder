@@ -26,7 +26,7 @@ public class CategoriaListViewAdapter extends BaseAdapter {
     LayoutInflater inflater;
     List<nthcPoligono> items;
     private Context mContext;
-    private String urlServer = "http://www.capacitasoft.com/site/Administrador/";
+
     public CategoriaListViewAdapter(Activity context, List<nthcPoligono> items) {
         super();
         this.mContext = context;
@@ -59,17 +59,10 @@ public class CategoriaListViewAdapter extends BaseAdapter {
 
         ImageView imgThumbnail = (ImageView)convertView.findViewById(R.id.imageViewImagen);
 //        TextView txtTitle = (TextView)convertView.findViewById(R.id.textViewNombre);
-        // TextView txtSubtitle = (TextView)convertView.findViewById(R.id.textViewPrecio);
 
-
-      //  Picasso.with(mContext).load(urlServer+"categoria/"+item.imagen).into(imgThumbnail);
-     //   txtTitle.setText(item.getImagen1());
-        //  txtSubtitle.setText("S/"+item.precio);
         String string = item.imagen3;
         byte[]  decoded =  android.util.Base64.decode(string, android.util.Base64.DEFAULT);
-    //   byte[] decoded = Base64.getDecoder().decode(string);
 
-    //    byte[] decoded = Base64.getDecoder().decode(string.getBytes(StandardCharsets.UTF_8));
         Bitmap bitmap = BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
         imgThumbnail.setImageBitmap(bitmap);
 
